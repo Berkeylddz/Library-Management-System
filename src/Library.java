@@ -168,7 +168,6 @@ public class Library {
         try{
             for(Borrowing borrowings1:borrowings){
                 if(borrowings1.getBook().getId()==bookId){
-                    //burada yapıcam işlemleri
                     borrowings1.getBook().setBorrowed(false);
                     borrowings1.getBook().setDueDate(null);
                     borrowings1.getMember().setReading(false);
@@ -345,7 +344,6 @@ public class Library {
                     +"] was extended by member ["+chosenMember.getId()+"] at "+localDate+"\n");
 
             LocalDate result = localDate.plusDays(7);
-            //extend edildiğinde setDUEDATA yapmadım bak buna
             chosenBook.setDueDate(result);
             fileWriter.write("New deadline of book ["+chosenBook.getId()+"] is "+chosenBook.getDueDate()+"\n");
         }
